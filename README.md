@@ -17,26 +17,26 @@ Skills are markdown files that give AI agents specialized knowledge and workflow
 ### Option 1: CLI Install (Recommended)
 
 ```bash
-npx skills add jaysahnan/claude-skills
+npx skills add jaysahnan/skills
 ```
 
 Or install a specific skill:
 
 ```bash
-npx skills add jaysahnan/claude-skills/writing-linkedin-posts
+npx skills add jaysahnan/skills/writing-linkedin-posts
 ```
 
 ### Option 2: Clone and Copy
 
 ```bash
-git clone https://github.com/jaysahnan/claude-skills.git
-cp -r claude-skills/skills/* ~/.claude/skills/
+git clone https://github.com/jaysahnan/skills.git
+cp -r skills/skills/* ~/.claude/skills/
 ```
 
 ### Option 3: Git Submodule
 
 ```bash
-git submodule add https://github.com/jaysahnan/claude-skills.git .claude/skills/jaysahnan
+git submodule add https://github.com/jaysahnan/skills.git .claude/skills/jaysahnan
 ```
 
 ## Usage
