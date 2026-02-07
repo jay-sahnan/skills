@@ -1,52 +1,92 @@
 # Writing LinkedIn Posts
 
-Create engaging, authentic LinkedIn posts that sound like you—not generic LinkedIn content.
+Create engaging, authentic LinkedIn posts that sound like *you*—not generic LinkedIn content.
 
-## What It Does
+## Why This Skill?
 
-This skill scrapes your existing LinkedIn posts to learn your authentic voice, then writes new posts that match your style. It uses research-backed data on hooks and LinkedIn algorithm patterns.
+Most AI-written LinkedIn posts sound the same. This skill is different: it scrapes your existing posts to learn your authentic voice, then writes new content that matches your style, tone, and formatting patterns.
 
-## Setup
+It also includes research-backed data on hooks and LinkedIn algorithm patterns from 2025.
 
-The skill requires two environment variables:
+## Installation
 
-1. **Get an Apify API token** (free tier available):
-   https://console.apify.com/settings/integrations
+Add this skill to Claude Code:
 
-2. **Find your LinkedIn username** (last part of your profile URL):
-   `linkedin.com/in/yourname` → `yourname`
+```bash
+claude install-skill https://github.com/jay-sahnan/skills/tree/main/skills/writing-linkedin-posts
+```
 
-3. **Add to your shell config** (`~/.zshrc` or `~/.bashrc`):
-   ```bash
-   export APIFY_TOKEN="your_token_here"
-   export LINKEDIN_USERNAME="your_username"
-   ```
+## Setup (2 minutes)
 
-4. **Reload your shell**:
-   ```bash
-   source ~/.zshrc
-   ```
+This skill needs two environment variables to scrape your LinkedIn posts.
+
+### Step 1: Get an Apify API Token (free)
+
+1. Go to [console.apify.com](https://console.apify.com) and create a free account
+2. Navigate to **Settings** → **Integrations**
+3. Click **+ Add token** and name it (e.g., "linkedin-scraper")
+4. Copy the token (it starts with `apify_api_`)
+
+### Step 2: Find Your LinkedIn Username
+
+Your username is the last part of your LinkedIn profile URL:
+
+```
+linkedin.com/in/jaysahnan
+                 ^^^^^^^^
+                 This is your username
+```
+
+### Step 3: Add Environment Variables
+
+Add these to your shell config (`~/.zshrc` on Mac, `~/.bashrc` on Linux):
+
+```bash
+export APIFY_TOKEN="apify_api_your_token_here"
+export LINKEDIN_USERNAME="your_username"
+```
+
+Then reload your shell:
+
+```bash
+source ~/.zshrc
+```
+
+### Verify Setup
+
+Run this to confirm your variables are set:
+
+```bash
+echo $APIFY_TOKEN $LINKEDIN_USERNAME
+```
 
 ## Usage
 
-Ask Claude to write a LinkedIn post:
+Just ask Claude to write a LinkedIn post:
 
-- "Write a LinkedIn post about [topic]"
-- "Help me with a LinkedIn post"
-- "Create a thought leadership post about [topic]"
+- "Write a LinkedIn post about launching my new product"
+- "Help me write a post about a lesson I learned this week"
+- "Create a thought leadership post about remote work"
+- "I want to share my thoughts on [topic] on LinkedIn"
 
-The skill will:
-1. Scrape your recent posts (cached locally)
-2. Analyze your voice patterns
-3. Write a post matching your style
-4. Offer to copy to clipboard
+### What Happens
 
-## Files
+1. **First run**: Claude scrapes your recent LinkedIn posts (takes ~30 seconds)
+2. **Analysis**: Your posts are analyzed for voice, tone, hooks, and formatting patterns
+3. **Writing**: New posts are written matching your authentic style
+4. **Caching**: Your posts are cached locally so future runs are instant
 
-- `SKILL.md` - Main skill definition with writing guidelines
-- `scripts/scrape_my_posts.py` - LinkedIn scraper with caching
-- `references/hooks.md` - Research-backed hook patterns
-- `references/examples.md` - LinkedIn algorithm data (2025)
+### Tips
+
+- The more posts you have on LinkedIn, the better it can learn your voice
+- Use `--refresh` flag in the scraper to fetch your latest posts
+- Posts are cached in `cache/` (gitignored, stays on your machine)
+
+## Privacy
+
+- Your credentials stay in your local environment variables
+- Scraped posts are cached locally on your machine only
+- Nothing is sent anywhere except the Apify API (to fetch your public posts)
 
 ## License
 
