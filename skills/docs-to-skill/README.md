@@ -15,7 +15,7 @@ Give it a docs URL, and it will:
 ## Installation
 
 ```bash
-claude install-skill https://github.com/jay-sahnan/skills/tree/main/skills/docs-to-skill
+npx skills add jay-sahnan/skills/skills/docs-to-skill
 ```
 
 ## Usage
@@ -50,7 +50,6 @@ skills/<name>/
 ## Tips
 
 - **Smaller docs = better results** — Skills from focused documentation (30-50 pages) turn out better than massive API references
-- **Check the generated scripts** — Run `npm install && npm run quickstart` to verify they work
 - **Review before using** — The skill generates a good starting point; you may want to refine the SKILL.md
 
 ## No Setup Required
