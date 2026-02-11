@@ -11,6 +11,7 @@ Skills are markdown files that give AI agents specialized knowledge and workflow
 | Skill | Description |
 |-------|-------------|
 | [writing-linkedin-posts](./skills/writing-linkedin-posts/) | Create engaging, authentic LinkedIn posts by learning your voice from existing posts |
+| [docs-to-skill](./skills/docs-to-skill/) | Convert online documentation into Claude Code skills with working scripts |
 
 ## Installation
 
@@ -45,12 +46,13 @@ Once installed, invoke skills through natural requests:
 
 - "Write a LinkedIn post about [topic]"
 - "Help me create a thought leadership post"
-- "Draft a LinkedIn post in my voice"
+- "Convert the Stripe docs into a skill"
 
 Or use direct commands:
 
 ```
 /writing-linkedin-posts
+/docs-to-skill https://docs.example.com
 ```
 
 ## Adding New Skills
